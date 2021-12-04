@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright ⓒ {COPYRIGHT.YEAR} to present, {COPYRIGHT.NAME} <{COPYRIGHT.EMAIL}> -->
+<!-- Copyright ⓒ 2021 to present, Josip Antoliš <josip.antolis@protonmail.com> -->
 <component type="desktop">
-  <id>com.github.{GITHUB.ORG}.{GITHUB.APP}</id>
+  <id>com.github.Antolius.granite_welcome_test</id>
   <metadata_license>CC0</metadata_license>
   <!--
     To update the content rating data of your app, you can
@@ -9,20 +9,20 @@
     https://hughsie.github.io/oars/generate.html
   -->
   <content_rating type="oars-1.1" />
-  <name>{APP.NAME}</name>
-  <summary>{APP.DESCRIPTION}</summary>
+  <name>Granite Wallpaper Test App</name>
+  <summary>Granite Wallpaper Test App</summary>
   <description>
-    <p>{APP.DESCRIPTION}</p>
+    <p>Granite Wallpaper Test App</p>
   </description>
-  <developer_name>{COPYRIGHT.NAME}</developer_name>
-  <launchable type="desktop-id">com.github.{GITHUB.ORG}.{GITHUB.APP}.desktop</launchable>
+  <developer_name>Josip Antoliš</developer_name>
+  <launchable type="desktop-id">com.github.Antolius.granite_welcome_test.desktop</launchable>
 
   <!--
     Do not uncomment or change the icon line, below. Its state is automatically
     managed by the task/preview-in-appcenter script as necessary. If you uncomment it
     manually, your Flatpak package attempts will fail.
   -->
-  <!-- <icon type="stock">com.github.{GITHUB.ORG}.{GITHUB.APP}<\/icon> -->
+  <!-- <icon type="stock">com.github.Antolius.granite_welcome_test<\/icon> -->
 
   <custom>
     <!--
@@ -57,9 +57,9 @@
   </custom>
 
   <!-- Links. -->
-  <url type="homepage">https://github.com/{GITHUB.ORG}/{GITHUB.APP}</url>
-  <url type="bugtracker">https://github.com/{GITHUB.ORG}/{GITHUB.APP}/issues</url>
-  <url type="help">https://github.com/{GITHUB.ORG}/{GITHUB.APP}#readme</url>
+  <url type="homepage">https://github.com/Antolius/granite_welcome_test</url>
+  <url type="bugtracker">https://github.com/Antolius/granite_welcome_test/issues</url>
+  <url type="help">https://github.com/Antolius/granite_welcome_test#readme</url>
 
   <!--
     If you accept donations, you can uncomment the line below and add a URL
@@ -67,5 +67,5 @@
   -->
   <!-- <url type="donation"></url> -->
 
-  <update_contact>{COPYRIGHT.EMAIL}</update_contact>
+  <update_contact>josip.antolis@protonmail.com</update_contact>
 </component>

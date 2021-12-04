@@ -1,4 +1,4 @@
 src/Application.vala
-sr/MainWindow.vala
-data/{GITHUB.APP}.desktop.in
-data/{GITHUB.APP}.appdata.xml.in
+src/MainWindow.vala
+data/granite_welcome_test.desktop.in
+data/granite_welcome_test.appdata.xml.in

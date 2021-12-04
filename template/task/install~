@@ -47,6 +47,54 @@ else
   echo '✓ elementary OS development libraries found.'
 fi
 
+# Ask to install recommended VSCodium Vala development and debugging
+# extensions (Vala, Meson, CodeLLDB, XML, YAML) if you have VSCodium
+# installed and are missing any of them.
+
+which_vscodium=$(which codium)
+vscodium_exists=$?
+if [[ ${vscodium_exists} == 0 ]]; then
+  # VSCodium is installed. Are all the extensions already installed? If so,
+  # we don’t need to bother the person with this.
+  already_installed_extensions_count=$(codium --list-extensions | grep -E "prince781.vala|asabil.meson|vadimcn.vscode-lldb|redhat.vscode-xml|redhat.vscode-yaml" | wc -l)
+  if [[ ${already_installed_extensions_count} != 5 ]]; then
+    # VSCodium is installed but one or more of the extensions that would
+    # make the person’s life easier aren’t. Ask the person if they’d
+    # like to have Watson install them.
+    install_extensions_question=$(zenity --question --text='<big>Install VSCodium extensions?</big>\n\n<i>(This will install the Vala, Meson, CodeLLDB debugger, XML, and YAML extensions. With the extensions installed, press F5 in VSCodium to run/debug your app.)</i>' --title='Watson' --width=250 --icon-name=extension)
+    install_extensions=$?
+    if [[ $install_extensions == 0 ]]; then
+      # Vala
+      # https://github.com/Prince781/vala-vscode
+      codium --install-extension prince781.vala
+
+      # Meson
+      # https://github.com/asabil/vscode-meson
+      codium --install-extension asabil.meson
+
+      # CodeLLDB: a native debugger extension based on LLDB.
+      # https://github.com/vadimcn/vscode-lldb
+      codium --install-extension vadimcn.vscode-lldb
+
+      # EditorConfig support
+      # https://github.com/editorconfig/editorconfig-vscode
+      codium --install-extension editorconfig.editorconfig
+
+      # XML
+      # https://github.com/redhat-developer/vscode-xml
+      codium --install-extension redhat.vscode-xml
+
+      # YAML
+      # https://github.com/redhat-developer/vscode-yaml
+      codium --install-extension redhat.vscode-yaml
+    fi
+  else
+    echo '✓ VSCodium and all recommended extensions already installed.'
+  fi
+else
+  echo 'ℹ️ VSCodium not installed; skipping recommended extensions check.'
+fi
+
 # Install dependencies.
 
 # If your app has any third-party dependencies that are not included in
@@ -82,6 +130,6 @@ popd
 # Clear icon caches.
 sudo update-icon-caches /usr/share/icons/*
 
-echo 'Granite Wallpaper Test App is installed.'
+echo '{APP.NAME} is installed.'
 echo ''
 echo 'You can run it from the Applications Menu or using the task/run script.'

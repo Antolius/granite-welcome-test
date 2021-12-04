@@ -1,12 +1,12 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name={APP.NAME}
-GenericName={APP.GENERIC_NAME}
-Comment={APP.COMMENT}
-Categories={APP.CATEGORIES}
-Exec=com.github.{GITHUB.ORG}.{GITHUB.APP}
-Icon=com.github.{GITHUB.ORG}.{GITHUB.APP}
+Name=Granite Wallpaper Test App
+GenericName=Granite Wallpaper Test App
+Comment=Granite Wallpaper Test App
+Categories=Development
+Exec=com.github.Antolius.granite_welcome_test
+Icon=com.github.Antolius.granite_welcome_test
 Terminal=false
-Keywords={APP.KEYWORDS}
+Keywords=test
 X-GNOME-UsesNotifications=true
