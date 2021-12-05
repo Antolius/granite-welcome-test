@@ -91,7 +91,19 @@ namespace GraniteWallpaperTestApp {
             grid.attach (toolbar, 0, 0);
 
             // Add other components to go under the toolbar here.
+            var welcome = new Granite.Widgets.Welcome (
+                "Granite Welcome Test App",
+                "An app that explores updating WelcomeButton."
+            );
 
+            welcome.append ("view-refresh", "Change icon", "Change this button's icon!");
+            welcome.activated.connect ((index) => {
+                var button = welcome.get_button_from_index (0);
+                button.icon = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
+                button.show_all ();
+            });
+
+            grid.attach (welcome, 0, 1);
             add (grid);
         }
 
